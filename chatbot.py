@@ -135,7 +135,7 @@ _BILMIYORUM = [
 ]
 
 def cevap(girdi, df, vecs, M, uretici,
-          esik=0.15, top_k=3, uretim=False):
+          esik=0.30, top_k=3, uretim=False):
     gn = _norm(girdi)
     v  = kullanici_vec(gn, vecs)
     sk = cosine_similarity(v, M)[0]               # ndarray (n,)
@@ -214,6 +214,5 @@ def main():
             print(f"Bot : {ur.uret(g[6:].strip()) or 'Üretemedi.'}"); continue
 
         print(f"Bot : {cevap(g, df, vecs, M, ur, uretim=mod)}")
-
 if __name__ == "__main__":
     main()
